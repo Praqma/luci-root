@@ -1,0 +1,7 @@
+def skip = [ 'xluci-showcase' ]
+
+def projectFolders = rootDir.listFiles().findAll { it.directory && it.name.startsWith('luci-') && !skip.contains(it.name)}
+
+projectFolders.each {
+  include it.name
+}
